@@ -1,6 +1,13 @@
+import { ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
 import { Link } from "@react-pdf/renderer";
 
 import { GlobalStyles } from "./constants";
+
+export function cn(...inputs: ClassValue[]) {
+	return twMerge(clsx(inputs));
+}
 
 export const TextConfig = [
 	{

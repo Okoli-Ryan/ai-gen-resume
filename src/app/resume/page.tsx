@@ -19,7 +19,7 @@ const ResumeDoc = () => {
 
 	return (
 		<div className="w-screen">
-			<PDFViewer className="h-screen" width={"100%"}>
+			<PDFViewer className="h-[100dvh]" width={"100%"}>
 				<MyDocument />
 			</PDFViewer>
 		</div>
