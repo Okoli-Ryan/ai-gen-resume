@@ -22,11 +22,11 @@ const WorkExperience = ({ experiences }: WorkExperienceProps) => {
 							<Row>
 								<Text style={GlobalStyles.bold}>
 									<Text style={GlobalStyles.uppercase}>{experience.companyName}</Text>{" "}
-									{experience.link && (
+									{experience.companyLink && (
 										<>
 											-{" "}
-											<Link style={GlobalStyles.link} src={experience.link}>
-												{experience.link}
+											<Link style={GlobalStyles.link} src={experience.companyLink}>
+												{experience.companyLink}
 											</Link>
 										</>
 									)}
