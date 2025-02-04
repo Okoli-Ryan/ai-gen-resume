@@ -15,8 +15,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import PersonalInfoForm from "../edit-form/personal-info";
-import SummaryForm from "../edit-form/summary-info";
+import PersonalInfoForm from "../edit-form/personal-info-form";
+import SummaryForm from "../edit-form/summary-form";
 import WorkExperienceForm from "../edit-form/work-experience-form";
 
 const Sidebar = () => {
@@ -34,14 +34,16 @@ const Sidebar = () => {
             Make changes to your resume here. Click save when you're done.
           </SheetDescription>
         </SheetHeader>
-        <Accordion type="single" collapsible>
-          {AccordionForms.map((form) => (
-            <AccordionItem key={form.displayName} value={form.displayName}>
-              <AccordionTrigger>{form.displayName}</AccordionTrigger>
-              <AccordionContent>{form()}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <div className="h-[calc(100dvh-7rem)] overflow-auto">
+          <Accordion type="single" collapsible>
+            {AccordionForms.map((form) => (
+              <AccordionItem key={form.displayName} value={form.displayName}>
+                <AccordionTrigger>{form.displayName}</AccordionTrigger>
+                <AccordionContent>{form()}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </SheetContent>
     </Sheet>
   );
