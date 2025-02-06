@@ -1,6 +1,4 @@
 import { useForm, Controller } from "react-hook-form";
-import ReactQuill from "react-quill-new";
-import "react-quill-new/dist/quill.snow.css";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -10,6 +8,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { ReactQuill } from "@/components/react-quill";
 
 type FormData = {
   summary: string;
@@ -42,7 +41,6 @@ const SummaryForm = () => {
           name="summary"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Summary</FormLabel>
               <FormControl>
                 <Controller
                   name="summary"

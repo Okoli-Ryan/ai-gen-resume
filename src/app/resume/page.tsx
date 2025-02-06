@@ -4,9 +4,9 @@ export const dynamic = "force-dynamic";
 
 import { useEffect, useState } from "react";
 
-import { PDFViewer } from "@react-pdf/renderer";
+// import { PDFViewer } from "@react-pdf/renderer";
 
-import { MyDocument } from "./components/my-document";
+// import { MyDocument } from "./components/my-document";
 import Sidebar from "./components/sidebar";
 
 const ResumeDoc = () => {
@@ -20,9 +20,9 @@ const ResumeDoc = () => {
 
   return (
     <div className="w-screen">
-      <PDFViewer className="h-[100dvh]" width={"100%"}>
+      {/* <PDFViewer className="h-[100dvh]" width={"100%"}>
         <MyDocument />
-      </PDFViewer>
+      </PDFViewer> */}
       <Sidebar />
     </div>
   );

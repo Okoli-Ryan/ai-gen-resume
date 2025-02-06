@@ -25,7 +25,7 @@ export function BulletPointsForm<T extends FieldValues>({ form, name }: BulletPo
         />
       ))}
 
-      <Button type="button" onClick={() => append({} as FieldArray<T>)} className="w-full">
+      <Button variant="secondary" type="button" onClick={() => append({} as FieldArray<T>)} className="w-full">
         + Add Bullet Point
       </Button>
     </div>

@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { Controller } from "react-hook-form";
-import ReactQuill from "react-quill-new";
-import "react-quill-new/dist/quill.snow.css";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Input } from "@/components/ui/input";
 import { FormItem, FormControl } from "@/components/ui/form";
 import { Label } from "@/components/ui/label";
 import { Check, Pencil, Trash } from "lucide-react";
+import { ReactQuill } from "@/components/react-quill";
 
 interface BulletPointFormItemProps {
     control: any;
@@ -23,7 +22,7 @@ export function BulletPointFormItem({
     const [isEditing, setIsEditing] = useState(true); // Single toggle state per item
 
     return (
-        <FormItem className="flex flex-col gap-4 border border-border p-2">
+        <FormItem className="flex flex-col gap-4">
             <FormControl>
                 {isEditing ? (
                     <Controller
