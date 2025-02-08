@@ -4,26 +4,28 @@ export const dynamic = "force-dynamic";
 
 import { useEffect, useState } from "react";
 
-import { PDFViewer } from "@react-pdf/renderer";
+// import { PDFViewer } from "@react-pdf/renderer";
 
-import { MyDocument } from "./components/my-document";
+// import { MyDocument } from "./components/my-document";
+import Sidebar from "./components/sidebar";
 
 const ResumeDoc = () => {
-	const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
-	useEffect(() => {
-		setLoaded(true);
-	}, []);
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
 
-	if (!loaded) return null;
+  if (!loaded) return null;
 
-	return (
-		<div className="w-screen">
-			<PDFViewer className="h-[100dvh]" width={"100%"}>
-				<MyDocument />
-			</PDFViewer>
-		</div>
-	);
+  return (
+    <div className="w-screen">
+      {/* <PDFViewer className="h-[100dvh]" width={"100%"}>
+        <MyDocument />
+      </PDFViewer> */}
+      <Sidebar />
+    </div>
+  );
 };
 
 export default ResumeDoc;

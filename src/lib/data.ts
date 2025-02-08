@@ -16,7 +16,7 @@ export const SummaryInfo = `Results-driven software engineer with 5 years of exp
 export const WorkExperiences: TWorkExperience[] = [
 	{
 		companyName: "Tech Innovators Inc.",
-		link: "https://techinnovators.com",
+		companyLink: "https://techinnovators.com",
 		title: "Senior Software Engineer",
 		startDate: "2020-06-01",
 		endDate: "2023-12-31",
@@ -29,7 +29,7 @@ export const WorkExperiences: TWorkExperience[] = [
 	},
 	{
 		companyName: "GreenTech Solutions",
-		link: "https://greentech.com",
+		companyLink: "https://greentech.com",
 		title: "Frontend Developer",
 		startDate: "2018-09-01",
 		endDate: "2020-05-31",

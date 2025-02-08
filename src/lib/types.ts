@@ -1,6 +1,6 @@
 export type TWorkExperience = {
 	companyName: string;
-	link?: string;
+	companyLink?: string;
 	title: string;
 	startDate: string;
 	endDate: string;
