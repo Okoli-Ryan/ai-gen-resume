@@ -19,6 +19,7 @@ import PersonalInfoForm from "../edit-form/personal-info-form";
 import SummaryForm from "../edit-form/summary-form";
 import WorkExperienceForm from "../edit-form/work-experience-form";
 import EducationForm from "../edit-form/education-form";
+import SkillsForm from "../edit-form/skills-form";
 
 const Sidebar = () => {
   return (
@@ -50,6 +51,6 @@ const Sidebar = () => {
   );
 };
 
-const AccordionForms = [PersonalInfoForm, SummaryForm, WorkExperienceForm, EducationForm];
+const AccordionForms = [PersonalInfoForm, SummaryForm, WorkExperienceForm, EducationForm, SkillsForm];
 
 export default Sidebar;

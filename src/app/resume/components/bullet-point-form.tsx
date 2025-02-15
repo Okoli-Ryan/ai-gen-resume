@@ -20,7 +20,7 @@ export function BulletPointsForm<T extends FieldValues>({ form, name }: BulletPo
         <BulletPointFormItem
           key={field.id}
           control={control}
-          fieldName={`bulletPoints.${index}`}
+          fieldName={`${name}.${index}`}
           onRemove={() => remove(index)}
         />
       ))}
