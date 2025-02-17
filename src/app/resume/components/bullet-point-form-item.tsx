@@ -1,3 +1,5 @@
+"use client"
+
 import { Check, Pencil, Trash } from "lucide-react";
 import { useState } from "react";
 import { Control, Controller, FieldValues, Path } from "react-hook-form";

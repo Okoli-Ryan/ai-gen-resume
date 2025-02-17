@@ -33,13 +33,13 @@ const SummaryForm = () => {
     <Form {...form}>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="max-w-xl mx-auto space-y-4"
+        className="space-y-4"
       >
         {/* Summary Field */}
         <FormField
           control={control}
           name="summary"
-          render={({ field }) => (
+          render={() => (
             <FormItem>
               <FormControl>
                 <Controller

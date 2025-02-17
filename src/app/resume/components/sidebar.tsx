@@ -9,6 +9,7 @@ import PersonalInfoForm from "../edit-form/personal-info-form";
 import SkillsForm from "../edit-form/skills-form";
 import SummaryForm from "../edit-form/summary-form";
 import WorkExperienceForm from "../edit-form/work-experience-form";
+import { ResumeFormSections } from "@/lib/constants";
 
 const Sidebar = () => {
 	return (
@@ -25,7 +26,7 @@ const Sidebar = () => {
 				</SheetHeader>
 				<div className="h-[calc(100dvh-7rem)] overflow-auto">
 					<Accordion type="single" collapsible>
-						{AccordionForms.map((form) => (
+						{ResumeFormSections.map((form) => (
 							<AccordionItem key={form.displayName} value={form.displayName}>
 								<AccordionTrigger>{form.displayName}</AccordionTrigger>
 								<AccordionContent>{form()}</AccordionContent>
@@ -38,6 +39,5 @@ const Sidebar = () => {
 	);
 };
 
-const AccordionForms = [PersonalInfoForm, SummaryForm, WorkExperienceForm, EducationForm, SkillsForm];
 
 export default Sidebar;

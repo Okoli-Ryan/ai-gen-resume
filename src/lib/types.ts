@@ -37,3 +37,12 @@ export type TSkill = {
 	category: string;
 	items: string[];
 };
+
+export type TResumeForm = {
+	personalInfo: TPersonalInfo,
+	workExperience: TWorkExperience,
+	projects: TProject[]
+	education: TEducation[]
+	skills: TSkill[]
+	summary: string
+}

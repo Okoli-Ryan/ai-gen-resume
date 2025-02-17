@@ -4,27 +4,33 @@ import { Label } from "@/components/ui/label";
 import { TPersonalInfo } from "@/lib/types";
 import { useForm } from "react-hook-form";
 
+type TPersonalInfoForm = {
+    personalInfo: TPersonalInfo & { firstname: string; lastname: string };
+};
+
 const PersonalInfoForm = () => {
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<TPersonalInfo & { firstname: string; lastname: string }>({
+    } = useForm<TPersonalInfoForm>({
         defaultValues: {
-            firstname: "Ugochukwu",
-            lastname: "Okoli",
-            email: "okoliryan50@gmail",
-            phoneNumber: "+2347025939563",
-            githubUrl: "https://github.com/okoliryan50",
-            linkedinUrl: "https://linkedin.com/in/okoliryan50",
-            portfolioUrl: "https://okoliryan50.vercel.app",
-            location: "Lagos, Nigeria",
-            title: "Frontend Developer",
+            personalInfo: {
+                firstname: "Ugochukwu",
+                lastname: "Okoli",
+                email: "okoliryan50@gmail",
+                phoneNumber: "+2347025939563",
+                githubUrl: "https://github.com/okoliryan50",
+                linkedinUrl: "https://linkedin.com/in/okoliryan50",
+                portfolioUrl: "https://okoliryan50.vercel.app",
+                location: "Lagos, Nigeria",
+                title: "Frontend Developer",
+            },
         },
     });
 
     const onSubmit = (
-        data: TPersonalInfo & { firstname: string; lastname: string }
+        data: TPersonalInfoForm
     ) => {
         console.log(data);
     };
@@ -35,9 +41,9 @@ const PersonalInfoForm = () => {
                 <Label htmlFor="firstname">First Name</Label>
                 <Input
                     id="firstname"
-                    {...register("firstname", { required: true })}
+                    {...register("personalInfo.firstname", { required: true })}
                 />
-                {errors.firstname && (
+                {errors?.personalInfo?.firstname && (
                     <p className="text-red-500 text-sm">
                         First name is required
                     </p>
@@ -47,9 +53,9 @@ const PersonalInfoForm = () => {
                 <Label htmlFor="lastname">Last Name</Label>
                 <Input
                     id="lastname"
-                    {...register("lastname", { required: true })}
+                    {...register("personalInfo.lastname", { required: true })}
                 />
-                {errors.lastname && (
+                {errors?.personalInfo?.lastname && (
                     <p className="text-red-500 text-sm">
                         Last name is required
                     </p>
@@ -60,9 +66,9 @@ const PersonalInfoForm = () => {
                 <Input
                     id="email"
                     type="email"
-                    {...register("email", { required: true })}
+                    {...register("personalInfo.email", { required: true })}
                 />
-                {errors.email && (
+                {errors?.personalInfo?.email && (
                     <p className="text-red-500 text-sm">Email is required</p>
                 )}
             </div>
@@ -70,28 +76,28 @@ const PersonalInfoForm = () => {
                 <Label htmlFor="phoneNumber">Phone Number</Label>
                 <Input
                     id="phoneNumber"
-                    {...register("phoneNumber", { required: true })}
+                    {...register("personalInfo.phoneNumber", { required: true })}
                 />
             </div>
             <div>
                 <Label htmlFor="githubUrl">GitHub URL</Label>
-                <Input id="githubUrl" {...register("githubUrl")} />
+                <Input id="githubUrl" {...register("personalInfo.githubUrl")} />
             </div>
             <div>
                 <Label htmlFor="linkedinUrl">LinkedIn URL</Label>
-                <Input id="linkedinUrl" {...register("linkedinUrl")} />
+                <Input id="linkedinUrl" {...register("personalInfo.linkedinUrl")} />
             </div>
             <div>
                 <Label htmlFor="portfolioUrl">Portfolio URL</Label>
-                <Input id="portfolioUrl" {...register("portfolioUrl")} />
+                <Input id="portfolioUrl" {...register("personalInfo.portfolioUrl")} />
             </div>
             <div>
                 <Label htmlFor="location">Location</Label>
-                <Input id="location" {...register("location")} />
+                <Input id="location" {...register("personalInfo.location")} />
             </div>
             <div>
                 <Label htmlFor="title">Title</Label>
-                <Input id="title" {...register("title")} />
+                <Input id="title" {...register("personalInfo.title")} />
             </div>
             <Button type="submit" className="w-full">
                 Submit
