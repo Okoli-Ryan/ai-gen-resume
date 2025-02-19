@@ -3,12 +3,6 @@ import { PanelRight } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-
-import EducationForm from "../edit-form/education-form";
-import PersonalInfoForm from "../edit-form/personal-info-form";
-import SkillsForm from "../edit-form/skills-form";
-import SummaryForm from "../edit-form/summary-form";
-import WorkExperienceForm from "../edit-form/work-experience-form";
 import { ResumeFormSections } from "@/lib/constants";
 
 const Sidebar = () => {
@@ -38,6 +32,5 @@ const Sidebar = () => {
 		</Sheet>
 	);
 };
-
 
 export default Sidebar;

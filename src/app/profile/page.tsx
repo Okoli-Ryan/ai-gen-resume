@@ -1,15 +1,12 @@
 "use client";
 
+import { useSession } from "next-auth/react";
 import { Fragment, useState } from "react";
+
 import { ResumeFormSections } from "@/lib/constants";
-import { useSession } from "next-auth/react"
 
 const Profile = () => {
     const [currentStep, setCurrentStep] = useState(0);
-    const handleNextStep = () => {
-        setCurrentStep(currentStep + 1);
-    };
-
     const session = useSession()
 
     console.log({session})

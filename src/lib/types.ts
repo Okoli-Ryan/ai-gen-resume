@@ -10,7 +10,7 @@ export type TWorkExperience = {
 
 export type TPersonalInfo = {
 	name: string;
-	title: string;
+	role: string;
 	location: string;
 	linkedinUrl: string;
 	phoneNumber: string;
