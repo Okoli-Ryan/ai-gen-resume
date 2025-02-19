@@ -12,9 +12,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { TWorkExperience } from "@/lib/types";
 import { BulletPointsForm } from "../components/bullet-point-form";
-import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
-import { Trash } from "lucide-react";
 
 type TWorkExperienceForm = {
     workExperience: (Omit<TWorkExperience, "bulletPoints"> & {
