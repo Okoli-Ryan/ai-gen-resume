@@ -11,7 +11,7 @@
 		"drizzle:drop": "drizzle-kit drop",
 		"drizzle:generate": "drizzle-kit generate",
 		"drizzle:migrate": "drizzle-kit migrate",
-		"drizzle:gen-migrate": "drizzle-kit generate && drizzle-kit migrate",
+		"drizzle:gen-push": "drizzle-kit generate && drizzle-kit push",
 		"drizzle:studio": "drizzle-kit studio"
 	},
 	"dependencies": {

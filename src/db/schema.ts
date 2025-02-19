@@ -14,10 +14,12 @@ const defaultColumns = {
 export const usersTable = pgTable("users", {
 	name: varchar({ length: 64 }).notNull(),
 	email: varchar({ length: 64 }).notNull().unique(),
-	phoneNumber: varchar({ length: 32 }).notNull(),
+	phoneNumber: varchar({ length: 32 }),
 	linkedinUrl: varchar({ length: 128 }),
 	githubUrl: varchar({ length: 128 }),
 	portfolioUrl: varchar({ length: 128 }),
+	provider: varchar({ length: 64 }),
+	providerId: varchar({ length: 64 }),
 	...defaultColumns,
 });
 
