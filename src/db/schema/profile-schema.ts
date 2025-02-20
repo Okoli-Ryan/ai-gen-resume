@@ -11,7 +11,7 @@ export const profiles = pgTable("profile", {
     userId: text()
         .notNull()
         .references(() => users.id),
-    role: varchar({ length: 64 }).notNull(),
+    name: varchar({ length: 64 }).notNull(),
     summary: text(),
     location: varchar({ length: 64 }).notNull(),
     phoneNumber: varchar({ length: 32 }),

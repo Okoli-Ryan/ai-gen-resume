@@ -1,4 +1,11 @@
-import { boolean, pgTable, text, unique, uuid, varchar } from "drizzle-orm/pg-core";
+import {
+    boolean,
+    pgTable,
+    text,
+    unique,
+    uuid,
+    varchar,
+} from "drizzle-orm/pg-core";
 import { defaultColumns } from "./common";
 import { relations } from "drizzle-orm";
 import { education } from "./education-schema";
@@ -18,6 +25,11 @@ export const resumes = pgTable(
         jobDescription: text(),
         isPublished: boolean().default(false),
         role: varchar({ length: 64 }),
+        location: varchar({ length: 64 }).notNull(),
+        phoneNumber: varchar({ length: 32 }),
+        linkedinUrl: varchar({ length: 128 }),
+        githubUrl: varchar({ length: 128 }),
+        portfolioUrl: varchar({ length: 128 }),
         ...defaultColumns,
     },
     (t) => [unique().on(t.id, t.userId)]

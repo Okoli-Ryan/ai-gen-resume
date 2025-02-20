@@ -1,12 +1,15 @@
 "use client";
 
-import { useSession } from "next-auth/react";
 import { Fragment, useState } from "react";
 
 import { ResumeFormSections } from "@/lib/constants";
 
-const Profile = () => {
+const CreateProfile = () => {
     const [currentStep, setCurrentStep] = useState(0);
+
+    function onSubmit() {
+	
+    }
 
     return (
         <div className="w-full max-w-6xl mx-auto py-12 md:py-16 grid grid-cols-1 md:grid-cols-[300px_1fr] gap-8">
@@ -43,4 +46,4 @@ const Profile = () => {
     );
 };
 
-export default Profile;
+export default CreateProfile;
