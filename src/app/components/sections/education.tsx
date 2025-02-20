@@ -3,8 +3,8 @@ import { TEducation } from "@/lib/types";
 import { StyleSheet, Text, View } from "@react-pdf/renderer";
 
 import BulletPoint from "../bullet-point";
-import Row from "../../resume/components/row";
-import Section from "../../resume/components/section";
+import Row from "../../(private)/resume/components/row";
+import Section from "../../(private)/resume/components/section";
 
 type EducationProps = {
 	educationList: TEducation[];

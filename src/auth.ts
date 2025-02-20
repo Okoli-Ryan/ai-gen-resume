@@ -1,23 +1,48 @@
 import { db } from "./db/index";
-import NextAuth from "next-auth";
+import NextAuth, { NextAuthConfig } from "next-auth";
 import Google from "next-auth/providers/google";
 import { userService } from "./db/services/user-service";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
-import { accounts, authenticators, sessions, users, verificationTokens } from "./db/schema";
+import {
+    accounts,
+    authenticators,
+    sessions,
+    users,
+    verificationTokens,
+} from "./db/schema";
 
-export const { handlers, signIn, signOut, auth } = NextAuth({
+export const authConfig = {
     providers: [Google],
     adapter: DrizzleAdapter(db, {
-	accountsTable: accounts,
-	usersTable: users,
-	authenticatorsTable: authenticators,
-	sessionsTable: sessions,
-	verificationTokensTable: verificationTokens
+        accountsTable: accounts,
+        usersTable: users,
+        authenticatorsTable: authenticators,
+        sessionsTable: sessions,
+        verificationTokensTable: verificationTokens,
     }),
     callbacks: {
         session({ session, user }) {
             session.user.id = user.id;
             return session;
         },
+	  authorized({auth, request: {nextUrl}}) {
+		const isLoggedIn = !!auth?.user
+
+		const publicPaths = ["/sign-in"]
+		const isProtected = !publicPaths.some(path => nextUrl.pathname.startsWith(path))
+
+		if(isProtected && !isLoggedIn) {
+			const redirectUrl = new URL("sign-in", nextUrl.origin)
+			redirectUrl.searchParams.append("callbackUrl", nextUrl.href)
+			return Response.redirect(redirectUrl.href)
+		}
+
+		return true
+	  }
     },
-});
+    pages: {
+        signIn: "sign-in",
+    },
+} satisfies NextAuthConfig;
+
+export const { handlers, signIn, signOut, auth } = NextAuth(authConfig);

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { FormLabel } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
-import { TSkillForm } from "../../components/edit-form/skills-form";
+import { TSkillForm } from "../../../components/edit-form/skills-form";
 
 type TSkillListInputForm = {
 	form: UseFormReturn<TSkillForm>;

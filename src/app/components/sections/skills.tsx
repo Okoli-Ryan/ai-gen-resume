@@ -2,7 +2,7 @@ import { GlobalStyles } from "@/lib/constants";
 import { TSkill } from "@/lib/types";
 import { StyleSheet, Text, View } from "@react-pdf/renderer";
 
-import Section from "../../resume/components/section";
+import Section from "../../(private)/resume/components/section";
 
 type SkllsProps = {
 	skills: TSkill[];

@@ -7,7 +7,6 @@ import { ResumeFormSections } from "@/lib/constants";
 
 const Profile = () => {
     const [currentStep, setCurrentStep] = useState(0);
-    const session = useSession()
 
     return (
         <div className="w-full max-w-6xl mx-auto py-12 md:py-16 grid grid-cols-1 md:grid-cols-[300px_1fr] gap-8">

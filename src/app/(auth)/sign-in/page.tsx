@@ -1,7 +1,9 @@
+import { signinWithGoogle } from "@/app/actions/auth-action";
 import { Button } from "@/components/ui/button";
-import { signinWithGoogle } from "./actions/signin-with-google";
 
-const Signin = () => {
+const Signin = async () => {
+
+
     return (
         <form action={signinWithGoogle} className="mx-auto max-w-sm space-y-6">
             <div className="space-y-2 text-center">
