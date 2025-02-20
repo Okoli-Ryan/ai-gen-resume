@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { TWorkExperience } from "@/lib/types";
-import { BulletPointsForm } from "../components/bullet-point-form";
+import { BulletPointsForm } from "./bullet-point-form";
 import { Card, CardContent } from "@/components/ui/card";
 
 type TWorkExperienceForm = {

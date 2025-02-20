@@ -1,6 +1,6 @@
 import { Text } from "@react-pdf/renderer";
 
-import Section from "../components/section";
+import Section from "../../resume/components/section";
 
 const Summary = ({ summary }: { summary: string }) => {
 	return (

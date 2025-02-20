@@ -2,7 +2,7 @@ import { ArrayPath, FieldArray, FieldValues, Path, useFieldArray, UseFormReturn 
 
 import { Button } from "@/components/ui/button";
 
-import { BulletPointFormItem } from "./bullet-point-form-item";
+import { BulletPointFormItem } from "../bullet-point-form-item";
 
 interface BulletPointsFormProps<T extends FieldValues> {
 	form: UseFormReturn<T, ArrayPath<T>, undefined>;

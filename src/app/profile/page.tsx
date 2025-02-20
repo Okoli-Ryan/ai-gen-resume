@@ -9,8 +9,6 @@ const Profile = () => {
     const [currentStep, setCurrentStep] = useState(0);
     const session = useSession()
 
-    console.log({session})
-
     return (
         <div className="w-full max-w-6xl mx-auto py-12 md:py-16 grid grid-cols-1 md:grid-cols-[300px_1fr] gap-8">
             <div className="bg-slate-100/30 rounded-lg p-6 h-max">

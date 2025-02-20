@@ -1,8 +1,8 @@
-import EducationForm from "@/app/resume/edit-form/education-form";
-import PersonalInfoForm from "@/app/resume/edit-form/personal-info-form";
-import SkillsForm from "@/app/resume/edit-form/skills-form";
-import SummaryForm from "@/app/resume/edit-form/summary-form";
-import WorkExperienceForm from "@/app/resume/edit-form/work-experience-form";
+import EducationForm from "@/app/components/edit-form/education-form";
+import PersonalInfoForm from "@/app/components/edit-form/personal-info-form";
+import SkillsForm from "@/app/components/edit-form/skills-form";
+import SummaryForm from "@/app/components/edit-form/summary-form";
+import WorkExperienceForm from "@/app/components/edit-form/work-experience-form";
 import { StyleSheet } from "@react-pdf/renderer";
 
 export const GlobalStyles = StyleSheet.create({

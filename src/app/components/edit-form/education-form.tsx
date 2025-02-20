@@ -3,7 +3,7 @@
 import { useFieldArray, useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { BulletPointsForm } from "../components/bullet-point-form";
+import { BulletPointsForm } from "./bullet-point-form";
 import { TEducation } from "@/lib/types";
 import { Form, FormLabel } from "@/components/ui/form";
 import { Card, CardContent } from "@/components/ui/card";
