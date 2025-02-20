@@ -2,7 +2,7 @@ import { InferInsertModel } from 'drizzle-orm';
 
 import { db } from '../';
 import { ProfileRepository } from '../repositories/profile-repository';
-import { profileTable } from '../schema';
+import { profiles } from '../schema';
 
 export class ProfileService {
 	profileRepository: ProfileRepository;
@@ -11,7 +11,7 @@ export class ProfileService {
 		this.profileRepository = new ProfileRepository(db);
 	}
 
-	createProfile(profile: InferInsertModel<typeof profileTable>) {
+	createProfile(profile: InferInsertModel<typeof profiles>) {
 		return this.profileRepository.createUserProfile(profile);
 	}
 }

@@ -1,12 +1,16 @@
-import { eq, InferInsertModel } from 'drizzle-orm';
+import { eq, InferInsertModel } from "drizzle-orm";
 
-import { db } from '../';
-import { usersTable } from '../schema';
+import { db as dbClient } from "../";
+import { users } from "../schema";
 
-export function createUser(user: InferInsertModel<typeof usersTable>) {
-	return db.insert(usersTable).values(user);
-}
+export class UserRepository {
+    constructor(private db: typeof dbClient) {}
 
-export function getUserByEmail(email: string) {
-	return db.query.usersTable.findFirst({ where: eq(usersTable.email, email) });
+    createUser(user: InferInsertModel<typeof users>) {
+        return this.db.insert(users).values(user);
+    }
+
+    getUserByEmail(email: string) {
+        return this.db.query.users.findFirst({ where: eq(users.email, email) });
+    }
 }

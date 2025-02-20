@@ -1,14 +1,28 @@
-import { InferInsertModel } from 'drizzle-orm';
+import { InferInsertModel } from "drizzle-orm";
 
-import { db } from '../';
-import { getUserByEmail } from '../repositories/user-repository';
-import { usersTable } from '../schema';
+import { db } from "../";
+import {
+	UserRepository
+} from "../repositories/user-repository";
+import { users } from "../schema";
 
-export async function findOrCreateUser(user: InferInsertModel<typeof usersTable>) {
-	const existingUser = await getUserByEmail(user.email);
-	if (existingUser) return existingUser;
+export class UserService {
+    userRepository: UserRepository;
 
-	const [newUser] = await db.insert(usersTable).values(user).returning();
+    constructor() {
+	this.userRepository = new UserRepository(db);
+    }
 
-    return newUser
+    async findOrCreateUser(user: InferInsertModel<typeof users>) {
+        const existingUser = await this.userRepository.getUserByEmail(
+            user.email
+        );
+        if (existingUser) return existingUser;
+
+        const [newUser] = await db.insert(users).values(user).returning();
+
+        return newUser;
+    }
 }
+
+export const userService = new UserService();
