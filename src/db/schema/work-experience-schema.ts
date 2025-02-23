@@ -1,13 +1,12 @@
+import { relations } from "drizzle-orm";
 import { date, pgTable, uuid, varchar } from "drizzle-orm/pg-core";
+
+import { bulletPoints } from "./bullet-point-schema";
 import { defaultColumns } from "./common";
 import { resumes } from "./resume-schema";
-import { profiles } from "./profile-schema";
-import { relations } from "drizzle-orm";
-import { bulletPoints } from "./bullet-point-schema";
 
 export const workExperience = pgTable("workExperience", {
 	resumeId: uuid().references(() => resumes.id),
-	profileId: uuid().references(() => profiles.id),
 	companyName: varchar({ length: 128 }).notNull(),
 	companyLink: varchar({ length: 128 }),
 	title: varchar({ length: 64 }).notNull(),
@@ -18,11 +17,6 @@ export const workExperience = pgTable("workExperience", {
 });
 
 export const workExperienceRelations = relations(workExperience, ({ one }) => ({
-	profile: one(profiles, {
-		fields: [workExperience.profileId],
-		references: [profiles.id],
-		relationName: "profile_workExperience",
-	}),
 	resume: one(resumes, {
 		fields: [workExperience.resumeId],
 		references: [resumes.id],

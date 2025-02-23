@@ -1,15 +1,10 @@
-import { db } from "./db/index";
-import NextAuth, { NextAuthConfig } from "next-auth";
-import Google from "next-auth/providers/google";
-import { userService } from "./db/services/user-service";
-import { DrizzleAdapter } from "@auth/drizzle-adapter";
-import {
-    accounts,
-    authenticators,
-    sessions,
-    users,
-    verificationTokens,
-} from "./db/schema";
+import NextAuth, { NextAuthConfig } from 'next-auth';
+import Google from 'next-auth/providers/google';
+
+import { DrizzleAdapter } from '@auth/drizzle-adapter';
+
+import { db } from './db/index';
+import { accounts, authenticators, sessions, users, verificationTokens } from './db/schema';
 
 export const authConfig = {
     providers: [Google],
@@ -29,7 +24,7 @@ export const authConfig = {
 		const isLoggedIn = !!auth?.user
 
 		const publicPaths = ["/sign-in"]
-		const isProtected = !publicPaths.some(path => nextUrl.pathname.startsWith(path))
+		const isProtected = !publicPaths.some((path) => nextUrl.pathname.startsWith(path)) || nextUrl.pathname === "/";
 
 		if(isProtected && !isLoggedIn) {
 			const redirectUrl = new URL("sign-in", nextUrl.origin)
