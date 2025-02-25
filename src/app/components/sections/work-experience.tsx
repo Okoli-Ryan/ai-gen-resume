@@ -5,8 +5,8 @@ import { TWorkExperience } from "@/lib/types";
 import { Link, StyleSheet, Text, View } from "@react-pdf/renderer";
 
 import BulletPoint from "../bullet-point";
-import Row from "../../(private)/resume/components/row";
-import Section from "../../(private)/resume/components/section";
+import Row from "../../(private)/resume/[id]/components/row";
+import Section from "../../(private)/resume/[id]/components/section";
 
 type WorkExperienceProps = {
 	experiences: TWorkExperience[];

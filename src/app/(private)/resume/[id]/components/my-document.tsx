@@ -1,12 +1,12 @@
 import { EducationData, PersonalInformation, ProjectsData, SkillsData, SummaryInfo, WorkExperiences } from "@/lib/data";
 import { Document, Page, StyleSheet, View } from "@react-pdf/renderer";
 
-import Education from "../../../components/sections/education";
-import PersonalInfo from "../../../components/sections/personal-info";
-import Projects from "../../../components/sections/projects";
-import Skills from "../../../components/sections/skills";
-import Summary from "../../../components/sections/summary";
-import WorkExperience from "../../../components/sections/work-experience";
+import Education from "../../../../components/sections/education";
+import PersonalInfo from "../../../../components/sections/personal-info";
+import Projects from "../../../../components/sections/projects";
+import Skills from "../../../../components/sections/skills";
+import Summary from "../../../../components/sections/summary";
+import WorkExperience from "../../../../components/sections/work-experience";
 
 export const MyDocument = () => (
 	<Document>

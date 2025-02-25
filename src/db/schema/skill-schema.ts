@@ -1,12 +1,12 @@
 import { relations, sql } from "drizzle-orm";
-import { pgTable, uuid, varchar } from "drizzle-orm/pg-core";
+import { pgTable, text, varchar } from "drizzle-orm/pg-core";
 
 import { defaultColumns } from "./common";
 import { resumes } from "./resume-schema";
 
 export const skills = pgTable("skill", {
 	category: varchar({ length: 64 }),
-	resumeId: uuid().references(() => resumes.id),
+	resumeId: text().references(() => resumes.id),
 	items: varchar({ length: 128 })
 		.array()
 		.notNull()

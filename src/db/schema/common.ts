@@ -1,9 +1,10 @@
-import { boolean, timestamp, uuid } from "drizzle-orm/pg-core";
+import { randomUUID } from "crypto";
+import { boolean, text, timestamp } from "drizzle-orm/pg-core";
 
 export const defaultColumns = {
-	id: uuid()
+	id: text("id")
 		.primaryKey()
-		.$defaultFn(() => crypto.randomUUID()),
+		.$defaultFn(() => randomUUID()),
 	activeStatus: boolean().default(true),
 	createdAt: timestamp().notNull().defaultNow(),
 	updatedAt: timestamp()

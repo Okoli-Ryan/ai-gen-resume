@@ -1,0 +1,44 @@
+{
+  "workExperience": [],
+  "bulletPoint": [],
+  "skill": [],
+  "project": [],
+  "education": [],
+  "user": [
+    {
+      "id": "0b2679dd-9394-47ac-a74d-b1b78890222e",
+      "emailVerified": null,
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocKBJNjhLSwJU8JBgRNZFPQBRKJb-oTFkUItIhFH4x2HbB7JwJBMQA=s96-c",
+      "name": "Okoli Ugo",
+      "email": "okoliryan50@gmail.com",
+      "activeStatus": true,
+      "createdAt": "2025-02-20T12:18:14.247Z",
+      "updatedAt": "2025-02-20T12:18:14.247Z"
+    }
+  ],
+  "resume": [],
+  "account": [
+    {
+      "userId": "0b2679dd-9394-47ac-a74d-b1b78890222e",
+      "type": "oidc",
+      "provider": "google",
+      "providerAccountId": "118231534059320695874",
+      "refresh_token": null,
+      "access_token": "ya29.a0AXeO80QAxfpSI5sHytgUTYU92ebhJ4oCRqabFWMAQY-bUokNfFr4p_YM7OymR9qEtCDYrQN87Init95U_P51bNnHvvjguCe8Ezwbe62dHx2lp3XRYR-K4T8grMRCE0uzQ8MvptkKcHKr-NhhFXyNi3vAKdIQedqtUPgclHu8ygaCgYKAZgSARISFQHGX2MiYeZXq5RKW-idr6VauhyuqQ0177",
+      "expires_at": 1740057490,
+      "token_type": "bearer",
+      "scope": "https://www.googleapis.com/auth/userinfo.email openid https://www.googleapis.com/auth/userinfo.profile",
+      "id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjVkMTJhYjc4MmNiNjA5NjI4NWY2OWU0OGFlYTk5MDc5YmI1OWNiODYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI4NDcwMTU2MjEwMy1rM2hpZDRsZXVuanF0ZHVncmRiMmpkMGNoZXY2YjVjMS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6Ijg0NzAxNTYyMTAzLWszaGlkNGxldW5qcXRkdWdyZGIyamQwY2hldjZiNWMxLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTE4MjMxNTM0MDU5MzIwNjk1ODc0IiwiZW1haWwiOiJva29saXJ5YW41MEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6InRFU3ZES1VfaWc5OFl5NUpIZXBoeVEiLCJuYW1lIjoiT2tvbGkgVWdvIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0tCSk5qaExTd0pVOEpCZ1JOWkZQUUJSS0piLW9URmtVSXRJaEZINHgySGJCN0p3SkJNUUE9czk2LWMiLCJnaXZlbl9uYW1lIjoiT2tvbGkiLCJmYW1pbHlfbmFtZSI6IlVnbyIsImlhdCI6MTc0MDA1Mzg5MiwiZXhwIjoxNzQwMDU3NDkyfQ.c4FeeDCGEjpQYZKbNRDP1rWFlMHqhAnBoVQk0ctuPCvCMBVQOGe_J-1Qe4wbsLHupgDyWBsrXJjtoW6aKa4pcKADynwFx9rBoYPx9_kY3wlVzNnVtjC_3G9hHmd_RlyCv-6mWTsJRj42mJABSIf0bxFu-67S4BYDqm1hHiHtmpYejMdJprwPpHZKPPguWCiaSX6eXBF_88O5UAYXpzg0BwhFNLgwlhg18fpsdQHoRRD9n9QpAy34qg7uNE_ssSI5eAC31j43KXwIf86qlJKFUjLurLJHmYumWy7KBR62ww50B4MgkKePLJQIZsPs187OkUu90J3-tos5VKApFPlBCA",
+      "session_state": null
+    }
+  ],
+  "session": [
+    {
+      "sessionToken": "c92b843d-f5b5-43f6-9f11-09e9c24304c5",
+      "userId": "0b2679dd-9394-47ac-a74d-b1b78890222e",
+      "expires": "2025-03-22T14:42:52.218Z"
+    }
+  ],
+  "verificationToken": [],
+  "authenticator": []
+}

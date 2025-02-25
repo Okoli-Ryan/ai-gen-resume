@@ -1,5 +1,5 @@
 {
-  "id": "23c0e33e-a3fa-48da-b1d0-e5136f2e662c",
+  "id": "9c3f000a-0a90-49d8-aae9-cbbb129222af",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -266,9 +266,27 @@
           "primaryKey": false,
           "notNull": true
         },
+        "workExperienceId": {
+          "name": "workExperienceId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "educationId": {
+          "name": "educationId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "projectId": {
+          "name": "projectId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
         "id": {
           "name": "id",
-          "type": "uuid",
+          "type": "text",
           "primaryKey": true,
           "notNull": true
         },
@@ -295,7 +313,47 @@
         }
       },
       "indexes": {},
-      "foreignKeys": {},
+      "foreignKeys": {
+        "bulletPoint_workExperienceId_workExperience_id_fk": {
+          "name": "bulletPoint_workExperienceId_workExperience_id_fk",
+          "tableFrom": "bulletPoint",
+          "tableTo": "workExperience",
+          "columnsFrom": [
+            "workExperienceId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "bulletPoint_educationId_education_id_fk": {
+          "name": "bulletPoint_educationId_education_id_fk",
+          "tableFrom": "bulletPoint",
+          "tableTo": "education",
+          "columnsFrom": [
+            "educationId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "bulletPoint_projectId_workExperience_id_fk": {
+          "name": "bulletPoint_projectId_workExperience_id_fk",
+          "tableFrom": "bulletPoint",
+          "tableTo": "workExperience",
+          "columnsFrom": [
+            "projectId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {},
       "policies": {},
@@ -308,9 +366,9 @@
       "columns": {
         "resumeId": {
           "name": "resumeId",
-          "type": "uuid",
+          "type": "text",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
         },
         "schoolName": {
           "name": "schoolName",
@@ -338,7 +396,7 @@
         },
         "id": {
           "name": "id",
-          "type": "uuid",
+          "type": "text",
           "primaryKey": true,
           "notNull": true
         },
@@ -386,117 +444,13 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.educationBulletPoints": {
-      "name": "educationBulletPoints",
-      "schema": "",
-      "columns": {
-        "educationId": {
-          "name": "educationId",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "bulletPointId": {
-          "name": "bulletPointId",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": true
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {
-        "educationBulletPoints_educationId_education_id_fk": {
-          "name": "educationBulletPoints_educationId_education_id_fk",
-          "tableFrom": "educationBulletPoints",
-          "tableTo": "education",
-          "columnsFrom": [
-            "educationId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
-        },
-        "educationBulletPoints_bulletPointId_bulletPoint_id_fk": {
-          "name": "educationBulletPoints_bulletPointId_bulletPoint_id_fk",
-          "tableFrom": "educationBulletPoints",
-          "tableTo": "bulletPoint",
-          "columnsFrom": [
-            "bulletPointId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
-        }
-      },
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {},
-      "policies": {},
-      "checkConstraints": {},
-      "isRLSEnabled": false
-    },
-    "public.projectBulletPoints": {
-      "name": "projectBulletPoints",
-      "schema": "",
-      "columns": {
-        "projectId": {
-          "name": "projectId",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "bulletPointId": {
-          "name": "bulletPointId",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": true
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {
-        "projectBulletPoints_projectId_project_id_fk": {
-          "name": "projectBulletPoints_projectId_project_id_fk",
-          "tableFrom": "projectBulletPoints",
-          "tableTo": "project",
-          "columnsFrom": [
-            "projectId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
-        },
-        "projectBulletPoints_bulletPointId_bulletPoint_id_fk": {
-          "name": "projectBulletPoints_bulletPointId_bulletPoint_id_fk",
-          "tableFrom": "projectBulletPoints",
-          "tableTo": "bulletPoint",
-          "columnsFrom": [
-            "bulletPointId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
-        }
-      },
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {},
-      "policies": {},
-      "checkConstraints": {},
-      "isRLSEnabled": false
-    },
     "public.project": {
       "name": "project",
       "schema": "",
       "columns": {
         "resumeId": {
           "name": "resumeId",
-          "type": "uuid",
+          "type": "text",
           "primaryKey": false,
           "notNull": false
         },
@@ -514,7 +468,7 @@
         },
         "id": {
           "name": "id",
-          "type": "uuid",
+          "type": "text",
           "primaryKey": true,
           "notNull": true
         },
@@ -635,7 +589,7 @@
         },
         "id": {
           "name": "id",
-          "type": "uuid",
+          "type": "text",
           "primaryKey": true,
           "notNull": true
         },
@@ -704,7 +658,7 @@
         },
         "resumeId": {
           "name": "resumeId",
-          "type": "uuid",
+          "type": "text",
           "primaryKey": false,
           "notNull": false
         },
@@ -717,7 +671,7 @@
         },
         "id": {
           "name": "id",
-          "type": "uuid",
+          "type": "text",
           "primaryKey": true,
           "notNull": true
         },
@@ -771,7 +725,7 @@
       "columns": {
         "resumeId": {
           "name": "resumeId",
-          "type": "uuid",
+          "type": "text",
           "primaryKey": false,
           "notNull": false
         },
@@ -813,7 +767,7 @@
         },
         "id": {
           "name": "id",
-          "type": "uuid",
+          "type": "text",
           "primaryKey": true,
           "notNull": true
         },
@@ -847,58 +801,6 @@
           "tableTo": "resume",
           "columnsFrom": [
             "resumeId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
-        }
-      },
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {},
-      "policies": {},
-      "checkConstraints": {},
-      "isRLSEnabled": false
-    },
-    "public.workExperienceBulletPoints": {
-      "name": "workExperienceBulletPoints",
-      "schema": "",
-      "columns": {
-        "workExperienceId": {
-          "name": "workExperienceId",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "bulletPointId": {
-          "name": "bulletPointId",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": true
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {
-        "workExperienceBulletPoints_workExperienceId_workExperience_id_fk": {
-          "name": "workExperienceBulletPoints_workExperienceId_workExperience_id_fk",
-          "tableFrom": "workExperienceBulletPoints",
-          "tableTo": "workExperience",
-          "columnsFrom": [
-            "workExperienceId"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
-        },
-        "workExperienceBulletPoints_bulletPointId_bulletPoint_id_fk": {
-          "name": "workExperienceBulletPoints_bulletPointId_bulletPoint_id_fk",
-          "tableFrom": "workExperienceBulletPoints",
-          "tableTo": "bulletPoint",
-          "columnsFrom": [
-            "bulletPointId"
           ],
           "columnsTo": [
             "id"

@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Form, FormLabel } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
-import SkillListInputForm from "../../(private)/resume/components/skill-list-input-form";
+import SkillListInputForm from "../../(private)/resume/[id]/components/skill-list-input-form";
 
 export type TSkillForm = {
 	skills: {

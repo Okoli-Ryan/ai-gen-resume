@@ -8,7 +8,7 @@ export const PersonalInformation: TPersonalInfo = {
 	name: "Ugochukwu Okoli",
 	phoneNumber: "+2347025939563",
 	portfolioUrl: "https://okoliryan50.vercel.app",
-	title: "Frontend Developer",
+	role: "Frontend Developer",
 };
 
 export const SummaryInfo = `Results-driven software engineer with 5 years of experience in designing and deploying web and mobile applications. Proficient in TypeScript, React, React Native, Next.js, and ASP.NET, with a strong focus on delivering efficient, user-friendly solutions. A proven problem-solver with a detail-oriented approach, dedicated to continuous learning and adopting innovative technologies. Experienced in developing projects across diverse sectors, including fintech, e-commerce, crypto, and HR services`;
