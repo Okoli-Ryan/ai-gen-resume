@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 
 import { useEffect, useState } from "react";
 import Sidebar from "./sidebar";
+import { useResumeContext } from "../providers/resume-provider";
 
 // import { PDFViewer } from "@react-pdf/renderer";
 
@@ -11,6 +12,7 @@ import Sidebar from "./sidebar";
 
 const ResumeDoc = () => {
     const [loaded, setLoaded] = useState(false);
+    const { resume } = useResumeContext();
 
     useEffect(() => {
         setLoaded(true);

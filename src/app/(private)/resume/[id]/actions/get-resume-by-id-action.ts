@@ -15,10 +15,22 @@ export async function getResumeById(id: string) {
         const resume = await db.query.resumes.findFirst({
             where: and(eq(resumes.id, id), eq(resumes.userId, userId)),
             with: {
-                education: true,
-                projects: true,
                 skills: true,
-                workExperience: true,
+                education: {
+                    with: {
+                        bulletPoints: true,
+                    },
+                },
+                projects: {
+                    with: {
+                        bulletPoints: true,
+                    },
+                },
+                workExperience: {
+                    with: {
+                        bulletPoints: true,
+                    },
+                },
             },
         });
 

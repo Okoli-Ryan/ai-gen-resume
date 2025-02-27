@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { TPersonalInfo } from "@/lib/types";
 
-type TPersonalInfoForm = {
+export type TPersonalInfoForm = {
     personalInfo: TPersonalInfo;
 };
 

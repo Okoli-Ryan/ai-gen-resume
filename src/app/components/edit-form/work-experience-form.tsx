@@ -10,14 +10,12 @@ import {
     FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { TWorkExperience } from "@/lib/types";
+import { ToBulletPointObj, TWorkExperience } from "@/lib/types";
 import { BulletPointsForm } from "./bullet-point-form";
 import { Card, CardContent } from "@/components/ui/card";
 
-type TWorkExperienceForm = {
-    workExperience: (Omit<TWorkExperience, "bulletPoints"> & {
-        bulletPoints: { text: string }[];
-    })[];
+export type TWorkExperienceForm = {
+    workExperience: ToBulletPointObj<TWorkExperience>[];
 };
 
 const WorkExperienceForm = () => {
@@ -40,10 +38,7 @@ const WorkExperienceForm = () => {
 
     return (
         <Form {...form}>
-            <form
-                onSubmit={handleSubmit(onSubmit)}
-                className="space-y-4"
-            >
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                 {fields.map((experience, index) => (
                     <Card key={experience.id}>
                         <CardContent className="py-4 flex flex-col gap-4">

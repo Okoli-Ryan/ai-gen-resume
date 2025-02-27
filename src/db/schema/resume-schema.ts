@@ -12,6 +12,7 @@ export const resumes = pgTable(
 	"resume",
 	{
 		name: varchar({ length: 64 }).notNull(),
+		email: varchar({ length: 64 }).notNull(),
 		summary: text(),
 		userId: text()
 			.notNull()
@@ -19,7 +20,7 @@ export const resumes = pgTable(
 		jobDescription: text(),
 		isPublished: boolean().default(false),
 		role: varchar({ length: 64 }),
-		location: varchar({ length: 64 }).notNull(),
+		location: varchar({ length: 64 }),
 		phoneNumber: varchar({ length: 32 }),
 		linkedinUrl: varchar({ length: 128 }),
 		githubUrl: varchar({ length: 128 }),

@@ -1,5 +1,5 @@
 import ResumeDoc from "./components/resume-page";
-import { getResumeById } from "./db/get-resume-by-id";
+import { getResumeById } from "./actions/get-resume-by-id-action";
 import { ResumeProvider } from "./providers/resume-provider";
 
 const Resume = async ({ params }: { params: Promise<{ id: string }> }) => {
