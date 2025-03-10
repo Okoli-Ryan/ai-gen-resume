@@ -19,19 +19,14 @@ import { ResumeFormSections } from "@/lib/constants";
 import { useResumeContext } from "../providers/resume-provider";
 import { useSession } from "next-auth/react";
 import {
-    TEducation,
-    ToBulletPointObj,
-    TPersonalInfo,
-    TProject,
-    TSkill,
-    TWorkExperience,
+    TResumeForm
 } from "@/lib/types";
 import { TSkillForm } from "@/app/components/edit-form/skills-form";
 import { TProjectForm } from "@/app/components/edit-form/projects-form";
-import { education, projects } from "@/db/schema";
 import { TEducationForm } from "@/app/components/edit-form/education-form";
 import { TWorkExperienceForm } from "@/app/components/edit-form/work-experience-form";
-import { TPersonalInfoForm } from "@/app/components/edit-form/personal-info-form";
+import { TPersonalInfoForm } from "@/app/components/edit-form/personal-info/personal-info-form";
+import { TSummaryForm } from "@/app/components/edit-form/summary-form";
 
 const Sidebar = () => {
     const { resume: initialResume } = useResumeContext();
@@ -50,7 +45,9 @@ const Sidebar = () => {
         },
     };
 
-    const initialSummary = initialResume?.summary || "";
+    const initialSummary: TSummaryForm = {
+        summary: initialResume?.summary || ""
+    };
 
     const initialWorkExperience: TWorkExperienceForm = {
         workExperience: (initialResume?.workExperience || []).map(
@@ -102,7 +99,14 @@ const Sidebar = () => {
         })),
     };
 
-//     Complete resume form initial data
+    const initialResumeForm: TResumeForm = {
+        ...initialPersonalInfo,
+        ...initialSummary,
+        ...initialWorkExperience,
+        ...initialEducation,
+        ...initialProjects,
+        ...initialSkills
+    }
 
     return (
         <Sheet>
@@ -130,7 +134,7 @@ const Sidebar = () => {
                                     {ResumeForm.displayName}
                                 </AccordionTrigger>
                                 <AccordionContent>
-                                    <ResumeForm />
+                                    <ResumeForm resume={initialResumeForm}/>
                                 </AccordionContent>
                             </AccordionItem>
                         ))}

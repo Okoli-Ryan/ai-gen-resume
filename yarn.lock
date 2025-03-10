@@ -3147,6 +3147,11 @@ next-auth@^5.0.0-beta.25:
   dependencies:
     "@auth/core" "0.37.2"
 
+next-safe-action@^7.10.4:
+  version "7.10.4"
+  resolved "https://registry.yarnpkg.com/next-safe-action/-/next-safe-action-7.10.4.tgz#89da1f12e9d9a1934bf598710ecf9ef90304afe5"
+  integrity sha512-rZE89DTNgiTJ8oPQBOZm+jd0Uf/pLkN+GE3PndER6vWqHGYGN7HMLvhpggkbE8W4TGp+qM7CPyrXye1wCjZLVg==
+
 next@15.1.5:
   version "15.1.5"
   resolved "https://registry.yarnpkg.com/next/-/next-15.1.5.tgz#80972a606d17ead86323d3405abf3bd3e2c894c8"
@@ -4448,10 +4453,10 @@ yoga-layout@^3.1.0:
   resolved "https://registry.yarnpkg.com/yoga-layout/-/yoga-layout-3.2.1.tgz#d2d1ba06f0e81c2eb650c3e5ad8b0b4adde1e843"
   integrity sha512-0LPOt3AxKqMdFBZA3HBAt/t/8vIKq7VaQYbuA8WxCgung+p9TVyKRYdpvCb80HcdTN2NkbIKbhNwKUfm3tQywQ==
 
-zod@^3.24.1:
-  version "3.24.1"
-  resolved "https://registry.yarnpkg.com/zod/-/zod-3.24.1.tgz#27445c912738c8ad1e9de1bea0359fa44d9d35ee"
-  integrity sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==
+zod@^3.24.2:
+  version "3.24.2"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-3.24.2.tgz#8efa74126287c675e92f46871cfc8d15c34372b3"
+  integrity sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==
 
 zustand@^5.0.3:
   version "5.0.3"

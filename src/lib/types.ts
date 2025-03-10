@@ -30,9 +30,9 @@ export type TEducation = {
     degree: string;
     major: string;
     location: string;
-    isOngoing: boolean
-    startDate: string
-    endDate?: string
+    isOngoing: boolean;
+    startDate: string;
+    endDate?: string;
     bulletPoints: string[];
 };
 
@@ -42,12 +42,17 @@ export type TSkill = {
 };
 
 export type TResumeForm = {
-    personalInfo: TPersonalInfo;
-    workExperience: TWorkExperience;
-    projects: TProject[];
-    education: TEducation[];
-    skills: TSkill[];
+    skills: {
+        category: string;
+        skills: {
+            text: string;
+        }[];
+    }[];
+    projects: ToBulletPointObj<TProject>[];
+    education: ToBulletPointObj<TEducation>[];
+    workExperience: ToBulletPointObj<TWorkExperience>[];
     summary: string;
+    personalInfo: TPersonalInfo;
 };
 
 export type ToBulletPointObj<T extends { bulletPoints: string[] }> = Omit<

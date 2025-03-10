@@ -10,14 +10,14 @@ import {
 } from "@/components/ui/form";
 import { ReactQuill } from "@/components/react-quill";
 
-type FormData = {
+export type TSummaryForm = {
   summary: string;
 };
 
 const MAX_LENGTH = 1000;
 
 const SummaryForm = () => {
-  const form = useForm<FormData>({
+  const form = useForm<TSummaryForm>({
     defaultValues: { summary: "" },
   });
 
@@ -25,7 +25,7 @@ const SummaryForm = () => {
 
   const summary = watch("summary") || "";
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = (data: TSummaryForm) => {
     console.log("Form Data:", data);
   };
 

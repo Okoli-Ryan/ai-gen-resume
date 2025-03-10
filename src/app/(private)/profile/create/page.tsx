@@ -38,7 +38,7 @@ const CreateProfile = () => {
                         <h4 className="text-gray-700 text-4xl font-bold mb-8">
                             {FormSection.displayName}
                         </h4>
-                        <FormSection />
+                        {/* <FormSection /> */}
                     </div>
                 </Fragment>
             ))}

@@ -3,23 +3,29 @@ import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { TPersonalInfo } from "@/lib/types";
+import { TPersonalInfo, TResumeForm } from "@/lib/types";
+import { useParams } from "next/navigation";
+import { updatePersonalInfo } from "./actions/update-personal-info-action";
+import { useAction } from "next-safe-action/hooks";
 
 export type TPersonalInfoForm = {
     personalInfo: TPersonalInfo;
 };
 
-const PersonalInfoForm = () => {
+const PersonalInfoForm = ({ resume }: { resume: TResumeForm }) => {
+    const resumeId = useParams().id
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<TPersonalInfoForm>({
-        defaultValues: {},
+    } = useForm<TResumeForm>({
+        defaultValues: resume,
     });
 
-    const onSubmit = (data: TPersonalInfoForm) => {
-        console.log(data);
+    const { isExecuting } = useAction(updatePersonalInfo)
+
+    const onSubmit = (data: TResumeForm) => {
+        
     };
 
     return (

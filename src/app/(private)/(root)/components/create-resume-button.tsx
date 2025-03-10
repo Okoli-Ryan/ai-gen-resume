@@ -2,7 +2,7 @@
 
 import { LoaderCircle, Plus } from "lucide-react";
 import { useTransition } from "react";
-import { createResume } from "../../resume/[id]/actions/create-resume-action";
+import { createResumeAction } from "../../resume/[id]/actions/create-resume-action";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
@@ -12,7 +12,7 @@ const CreateResumeButton = () => {
 
     function handleCreateResume() {
         startTransition(async () => {
-            const response = await createResume();
+            const response = await createResumeAction();
 
             if (response.error) {
                 toast.error(response.error);

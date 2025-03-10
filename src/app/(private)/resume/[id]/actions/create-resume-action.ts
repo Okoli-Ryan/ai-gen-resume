@@ -2,22 +2,18 @@
 
 import { auth, signOut } from "@/auth";
 import { db } from "@/db";
+import { createResume } from "@/db/repositories/resume";
 import { resumes } from "@/db/schema";
 import { InferInsertModel } from "drizzle-orm";
 
-export async function createResume() {
+export async function createResumeAction() {
     try {
         const session = await auth();
-        const userId = session?.user?.id;
+        const user = session?.user;
 
-        if (!userId) await signOut({ redirectTo: "/sign-in" });
+        if (!user) return await signOut({ redirectTo: "/sign-in" });
 
-        const [resume] = await db
-            .insert(resumes)
-            .values({ name: "New Resume", userId, location: "" } as InferInsertModel<
-                typeof resumes
-            >)
-            .returning();
+        const [resume] = await createResume(user);
         return { data: resume };
     } catch (error: any) {
         return { error: error?.message || "Failed to create resume" };

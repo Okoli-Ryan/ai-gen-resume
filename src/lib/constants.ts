@@ -1,5 +1,5 @@
 import EducationForm from "@/app/components/edit-form/education-form";
-import PersonalInfoForm from "@/app/components/edit-form/personal-info-form";
+import PersonalInfoForm from "@/app/components/edit-form/personal-info/personal-info-form";
 import ProjectForm from "@/app/components/edit-form/projects-form";
 import SkillsForm from "@/app/components/edit-form/skills-form";
 import SummaryForm from "@/app/components/edit-form/summary-form";
